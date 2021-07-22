@@ -64,7 +64,6 @@ $('.mobile-menu').on('click', function () {
 	$('.mobile-menu').toggleClass('active');
 	$('.mobile-menu-wrapper-one').toggleClass('menu-active');
 	$('.mobile-menu-wrapper-two').toggleClass('active-sub');
-	
 })
 
 $('#hideLeft').on('click', function () {
@@ -88,20 +87,26 @@ $('#hideRight').on('click', function () {
 // Переключает вкладки
 
 $(".tab_item").not(":first").hide();
-$(".menu .tab").click(function() {
-	$(".menu .tab").removeClass("active").eq($(this).index()).addClass("active");
-	$(".tab_item").hide().eq($(this).index()).fadeIn()
-}).eq(0).addClass("active");
+
+
+
+//
+// $(".menu .tab").on('click', function() {
+// 	$(".menu .tab").removeClass("active").eq($(this).index()).addClass("active");
+// 	$(".tab_item").hide().eq($(this).index()).fadeIn()
+// }).eq(0).addClass("active");
 
 
 
 
 
 
-
-
-
-
+$(".menu .tab").on('click', function() {
+	if (!$(this).hasClass('active')) {
+		$(this).addClass('active').siblings().removeClass('active');
+		$(".tab_item").hide().eq($(this).index()).fadeIn();
+	}
+});
 
 
 //  slick слайдеры
@@ -134,18 +139,6 @@ $('.comments-slider-container').slick({
 // сколл меню в footer
 
 
-$('#navFirst').on('click', function () {
-	$('#navFirst').toggleClass('active');
-
-	if ($('#navFirst').hasClass('active')) {
-		$('.mobile-list-first').show('fast');
-	} else {
-		$('.mobile-list-first').hide('fast');
-	}
-})
-
-
-
 
 
 // footer меню
@@ -162,43 +155,17 @@ windowSizeOne()
 
 
 
+$('.footer-nav').on('click', function () {
+	const $thisNav = $(this).parents('.footer-links').find('ul');
+	
+	$(this).toggleClass('active');
 
-
-$('#navSecond').on('click', function () {
-	$('#navSecond').toggleClass('active');
-
-	if ($('#navSecond').hasClass('active')) {
-		$('.mobile-list-second').show('fast');
+	if ($(this).hasClass('active')) {
+		$thisNav.show('fast');
 	} else {
-		$('.mobile-list-second').hide('fast');
-	}
-
-})
-
-
-
-
-function windowSizeTwo() {
-	if ($(window).width() < 767) {
-		$('.mobile-list-third').hide();
-	} else {
-		$('.mobile-list-third').show();
-	}
-}
-windowSizeTwo()
-
-
-
-$('#navThird').on('click', function () {
-	$('#navThird').toggleClass('active');
-
-	if ($('#navThird').hasClass('active')) {
-		$('.mobile-list-third').show('fast');
-	} else {
-		$('.mobile-list-third').hide('fast');
+		$thisNav.hide('fast');
 	}
 })
-
 
 // FAQs секция
 
