@@ -17,7 +17,17 @@ svg path {
     display: none;
 }
 
-
+header {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%;
+    transition: all .3s ease;
+    z-index: 50;
+    background-color: #fff;
+}
+header.out {
+  transform: translateY(-100%);
+}
 
 .header-container {
     padding: 10px 100px;
@@ -523,6 +533,7 @@ img.about-us-slider-img3 {
 .slick-track{
     display: flex;
     align-items: flex-start;
+    overflow: hidden;
 }
 
 
@@ -1621,6 +1632,35 @@ img.slider-bg {
 }
 
 
+@media screen and (max-width: 1250px) {
+    img.first {
+        max-width: 400px;
+    }
+    .hero-text h2 {
+        font-size: 42px;
+        line-height: 45px;
+    }
+    img.second {
+        max-width: 330px;
+    }
+}
+@media screen and (max-width: 1120px) {
+    img.first {
+        max-width: 330px;
+    }
+    .hero-text p {
+        font-size: 40px;
+        line-height: 45px;
+    }
+    .hero-text h2 {
+        font-size: 38px;
+        line-height: 42px;
+    }
+    img.second {
+        max-width: 300px;
+    }
+}
+
 
 @media screen and (max-width: 1200px) {
     .photo-img img {
@@ -1730,25 +1770,27 @@ img.slider-bg {
 
     .mobile-menu-wrapper-one {
         display: block;
-        transition: all 1s;
+        transition: all 1s ease 0s;
         top: -1000px;
         position: absolute;
-        left: 0;
+        right: 0;
         z-index: 6;
         width: 100%;
     }
        .mobile-menu-wrapper-one.menu-active {
         top: 80px;
         position: absolute;
-        left: 0;
+        right: 0;
         z-index: 6;
         width: 100%;
-        transition: all 1s;
+        transition: all 0.5s ease 0.5s;
     }
     .mobile-menu-wrapper-one.hideLeft {
         position: absolute;
         top: 80px;
-        left: -100%;
+        right: 100%;
+        transition: all 0.5s ease 0s;
+        
     } 
     .mobile-menu-wrapper-two.active-sub {
         display: block;
@@ -1759,16 +1801,16 @@ img.slider-bg {
     .mobile-menu-wrapper-two {
         position: absolute;
         top:80px;
-        left: 100%;
+        right: 100%;
         z-index: 6;
         width: 100%;
-        transition: all 1s;
+        transition: all 0.5s ease 0s;
     }
     .mobile-menu-wrapper-two.showLeft { 
         position: absolute;
         top:80px;
-        left: 0;
-        transition: all 0.5s;
+        right: 0;
+        transition: all 0.5s ease 0.5s;
     } 
 
     
@@ -1983,7 +2025,11 @@ img.slider-bg {
 
 
 
-
+@media screen and (max-width: 897px) {
+    img.first {
+        max-width: 200px;
+    }
+}
 
 
 
@@ -1999,17 +2045,55 @@ img.slider-bg {
 
 
     
-   
-
-    header {
-        position: relative;
+    .mobile-menu-wrapper-one.menu-active {
+        top: 65px;
+        position: absolute;
+        right: 0;
+        z-index: 6;
+        width: 100%;
+        transition: all 0.5s ease 0.5s;
     }
+    .mobile-menu-wrapper-one.hideLeft {
+        position: absolute;
+        top: 65px;
+        right: 100%;
+        transition: all 0.5s ease 0s;
+        
+    } 
+    .mobile-menu-wrapper-two.active-sub {
+        display: block;
+    }
+    .mobile-menu-wrapper-two {
+        display: none;
+    }
+    .mobile-menu-wrapper-two {
+        position: absolute;
+        top:65px;
+        right: 100%;
+        z-index: 6;
+        width: 100%;
+        transition: all 0.5s ease 0s;
+    }
+    .mobile-menu-wrapper-two.showLeft { 
+        position: absolute;
+        top:65px;
+        right: 0;
+        transition: all 0.5s ease 0.5s;
+    } 
+
+
+    
     .hero {
         padding-top: 100%;
     }
     
-    
+    .header-container {
+        padding: 10px;
+    }
 
+    .header-logo a img {
+        max-width: 55px;
+    }
 
     .product-item h2 {
         font-size: 18px;
@@ -2153,7 +2237,7 @@ img.slider-bg {
 
 @media screen and (max-width: 620px) {
     img.first {
-        max-width: 215px;
+        max-width: 155px;
     }
 }
 

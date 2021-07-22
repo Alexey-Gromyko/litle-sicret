@@ -1,0 +1,124 @@
+.faqs-content {
+    background-color: #fff;
+    padding: 120px 0 40px 0;
+}
+.faqs-container {
+    max-width: 70%;
+    margin: 0 auto;
+}
+.title-with-img {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 10px;
+}
+.title-with-img img {
+    display: block;
+    width: 100%;
+    max-width: 33px;
+}
+.title-with-img h2 {
+    margin-left: 15px;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 29px;
+    color: #2B2626;
+}
+.content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 10px 15px 10px;
+    border-bottom: 1px solid #000000;
+    transition: all 0.5s;
+    cursor: pointer;
+    flex-wrap: wrap;
+}
+.content:nth-child(2) {
+    border-top: 1px solid #000000;
+}
+.content:hover {
+    background-color: #FAFBFC;
+    transition: all 0.5s;
+}
+.content:hover > button.open {
+    background-color: #9482CF;
+}
+.content:hover > button.open::before {
+    background-color: #fff;;
+}
+.content:hover > button.open::after {
+    background-color: #fff;;
+}
+.content h3 {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 16px;
+    line-height: 20px;
+    display: flex;
+    align-items: center;
+    color: #2B2626;
+    width: 96%;
+    transition: all 0.5s;
+}
+.content button {
+    width: 32px;
+    height: 32px;
+    background-color: #fff;
+    cursor: pointer;
+    border: 2px solid #9482CF;
+    box-sizing: border-box;
+    border-radius: 50px;
+    position: relative;
+    transition: all 0.5s;
+}
+.content button::before, .content button::after {
+    content: "";
+    position: absolute;
+    width: 14px;
+    height: 2px;
+    background: #9482CF;
+    border-radius: 2px;
+    transition: all 0.5s;
+}
+.content button::before {
+    top: 50%;
+    left: calc(50% - 7px);
+}
+.content button::after {
+    top: 50%;
+    left: calc(50% - 7px);
+    transform: rotate(90deg);
+}
+.fadeOutText {
+    display: none;
+    padding: 0 10px;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 140%;
+    color: #2B2626;
+    margin-top: 20px
+}
+
+button.open.active {
+    background-color: #9482CF;
+}
+button.open.active::after {
+    opacity: 0;
+    transition: all 0.5s;
+    transform: rotate(0);
+    background-color: #fff;
+}
+button.open.active::before {
+    background-color: #fff;;
+}
+h3.title-color.active {
+    color: #9482CF;
+    transition: all 0.5s;
+}

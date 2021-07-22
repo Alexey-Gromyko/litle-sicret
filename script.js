@@ -1,4 +1,26 @@
 
+// выезжающий header при склодде вверх
+
+let header = $('header'),
+		scrollPrev = 0;
+
+$(window).scroll(function() {
+	let scrolled = $(window).scrollTop();
+ 
+	if ( scrolled > 100 && scrolled > scrollPrev ) {
+		header.addClass('out');
+	} else {
+		header.removeClass('out');
+	}
+	scrollPrev = scrolled;
+});
+
+
+
+
+
+
+
 // открывает и закрывает вклядку Shop
 
 $('#subMenu').on('click', function () {
@@ -123,6 +145,12 @@ $('#navFirst').on('click', function () {
 })
 
 
+
+
+
+// footer меню
+
+
 function windowSizeOne() {
 	if ($(window).width() < 767) {
 		$('.mobile-list-second').hide();
@@ -170,3 +198,184 @@ $('#navThird').on('click', function () {
 		$('.mobile-list-third').hide('fast');
 	}
 })
+
+
+// FAQs секция
+
+//$('#fadeOutText').hide();
+
+// $('.content').on('click', function () {
+// 	$('.fadeOutText').toggleClass('active');
+// 	$('.fadeOutText').each(function (index) {
+// 		if ($(this).hasClass('active')) {
+// 			$('.fadeOutText').show('slow');
+// 		} else {
+// 			$('.fadeOutText').hide('slow');
+// 		}
+			
+// 	});
+// })
+
+
+// $('.content').on('click', function () {
+// 	$('.fadeOutText').toggleClass('active');
+// 	let arrText = [$('.fadeOutText')];
+// 	let i = 0;
+// 	for ( let i = 0; i < arrText.length; i++);
+// 	if (i == 1) {
+// 		$('.fadeOutText').show('slow');
+// 	} else {
+// 		$('.fadeOutText').hide('slow');
+// 	}
+// })
+
+
+
+
+
+
+
+
+
+$('.content').on('click', function (){
+	$(this).toggleClass('show-this');
+	if($(this).hasClass('show-this')) {
+		$('.content.show-this p').slideDown();
+		$('.open').addClass('active');
+ 		$('.title-color').addClass('active');
+	} else {
+		$('.content p').slideUp();
+		$('.open').removeClass('active');
+		$('.title-color').removeClass('active');
+	}
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// $('.content').on('click', function () {
+// 	if ($(this)) {
+// 		$(this).toggleClass('show-this');
+// 	}
+// 	else if ($('.content').hasClass('show-this')) {
+// 		$('.content.show-this p').show('slow');
+// 		$('.open').addClass('active');
+// 		$('.title-color').addClass('active');
+// 	} else {
+// 		$('.content p').hide('slow');
+// 		$('.open').removeClass('active');
+// 		$('.title-color').removeClass('active');
+// 	}
+// })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// $('.content').each(function () {
+// 	if ($(this).hasClass('show-this')) {
+// 		$('.fadeOutText').show('slow');
+// 	} else {
+// 		$('.fadeOutText').hide('slow');
+// 	}
+// })
+
+
+// $('.content').on('click', function () {
+// 	$('.fadeOutText').toggleClass('active');
+// 		if ($('.fadeOutText').hasClass('active')) {
+// 		$('.fadeOutText').show('slow');
+// 	} else {
+// 		$('.fadeOutText').hide('slow');
+// 	}
+// })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// $('.content').on('click', function () {
+// 	if ($('.content').hasClass('show-this')) {
+// 		$('.open').addClass('active');
+// 		$('.title-color').addClass('active');
+// 	} else {
+// 		$('.open').removeClass('active');
+// 		$('.title-color').removeClass('active');
+// 	}
+// }) 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// $('.content').click(function() {
+//   $(this).toggleClass('active').next()[$(this).next().is(':hidden') ? "slideDown" : "slideUp"](400);
+// });
