@@ -45,7 +45,6 @@ $('.mobile-menu').on('click', function () {
 	$('.mobile-menu').toggleClass('active');
 	$('.mobile-menu-wrapper-one').toggleClass('menu-active');
 	$('.mobile-menu-wrapper-two').toggleClass('active-sub');
-	
 })
 
 $('#hideLeft').on('click', function () {
@@ -83,6 +82,38 @@ $('#hideRight').on('click', function () {
 	})
 
 
+<<<<<<< HEAD:script/script.js
+=======
+
+
+// Переключает вкладки
+
+$(".tab_item").not(":first").hide();
+
+
+
+//
+// $(".menu .tab").on('click', function() {
+// 	$(".menu .tab").removeClass("active").eq($(this).index()).addClass("active");
+// 	$(".tab_item").hide().eq($(this).index()).fadeIn()
+// }).eq(0).addClass("active");
+
+
+
+
+
+
+$(".menu .tab").on('click', function() {
+	if (!$(this).hasClass('active')) {
+		$(this).addClass('active').siblings().removeClass('active');
+		$(".tab_item").hide().eq($(this).index()).fadeIn();
+	}
+});
+
+
+//  slick слайдеры
+
+>>>>>>> 96ae3c53e5fe7ce09568ce9a18bd3979a4807b3d:script.js
 $('.slider').slick({
 	dots: true,
 	adaptiveHeight: true,
@@ -145,7 +176,41 @@ $('.comments-slider-container').slick({
 	
 
 
+<<<<<<< HEAD:script/script.js
 	
+=======
+// сколл меню в footer
+
+
+
+
+// footer меню
+
+
+function windowSizeOne() {
+	if ($(window).width() < 767) {
+		$('.mobile-list-second').hide();
+	} else {
+		$('.mobile-list-second').show();
+	}
+}
+windowSizeOne()
+
+
+
+$('.footer-nav').on('click', function () {
+	const $thisNav = $(this).parents('.footer-links').find('ul');
+	
+	$(this).toggleClass('active');
+
+	if ($(this).hasClass('active')) {
+		$thisNav.show('fast');
+	} else {
+		$thisNav.hide('fast');
+	}
+})
+
+>>>>>>> 96ae3c53e5fe7ce09568ce9a18bd3979a4807b3d:script.js
 // FAQs секция
 
 //$('#fadeOutText').hide();
