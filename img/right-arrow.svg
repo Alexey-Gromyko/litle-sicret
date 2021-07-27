@@ -1,43 +1,17 @@
-<?xml version="1.0" encoding="iso-8859-1"?>
-<!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 492.004 492.004" style="enable-background:new 0 0 492.004 492.004;" xml:space="preserve">
-<g>
-	<g>
-		<path d="M382.678,226.804L163.73,7.86C158.666,2.792,151.906,0,144.698,0s-13.968,2.792-19.032,7.86l-16.124,16.12
-			c-10.492,10.504-10.492,27.576,0,38.064L293.398,245.9l-184.06,184.06c-5.064,5.068-7.86,11.824-7.86,19.028
-			c0,7.212,2.796,13.968,7.86,19.04l16.124,16.116c5.068,5.068,11.824,7.86,19.032,7.86s13.968-2.792,19.032-7.86L382.678,265
-			c5.076-5.084,7.864-11.872,7.848-19.088C390.542,238.668,387.754,231.884,382.678,226.804z"/>
-	</g>
+<svg width="58" height="58" viewBox="0 0 58 58" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g filter="url(#filter0_d)">
+<circle cx="29" cy="25" r="25" fill="white"/>
+<path d="M35.7762 24.4561L30.7203 19.4001C30.576 19.2557 30.3836 19.1765 30.1785 19.1765C29.9732 19.1765 29.781 19.2558 29.6366 19.4001L29.1776 19.8592C29.0334 20.0033 28.9539 20.1958 28.9539 20.401C28.9539 20.6061 29.0334 20.8051 29.1776 20.9491L32.1271 23.9052H22.7563C22.3338 23.9052 22 24.2359 22 24.6586V25.3077C22 25.7303 22.3338 26.0944 22.7563 26.0944H32.1606L29.1777 29.0669C29.0335 29.2112 28.9541 29.3985 28.9541 29.6037C28.9541 29.8087 29.0335 29.9987 29.1777 30.1429L29.6368 30.6005C29.7811 30.7449 29.9733 30.8235 30.1786 30.8235C30.3838 30.8235 30.5761 30.7438 30.7204 30.5995L35.7763 25.5436C35.921 25.3988 36.0005 25.2056 36 25.0001C36.0004 24.794 35.921 24.6006 35.7762 24.4561Z" fill="#2B2626"/>
 </g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
+<defs>
+<filter id="filter0_d" x="0" y="0" width="58" height="58" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feOffset dy="4"/>
+<feGaussianBlur stdDeviation="2"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0.133333 0 0 0 0 0.12195 0 0 0 0 0.0805556 0 0 0 0.1 0"/>
+<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow"/>
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape"/>
+</filter>
+</defs>
 </svg>

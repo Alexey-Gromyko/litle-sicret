@@ -1,5 +1,4 @@
-
-// выезжающий header при склодде вверх
+$(document).ready(function () {
 
 let header = $('header'),
 		scrollPrev = 0;
@@ -15,27 +14,20 @@ $(window).scroll(function() {
 	scrollPrev = scrolled;
 });
 
-
-
-
-
-
-
-// открывает и закрывает вклядку Shop
+	
 
 $('#subMenu').on('click', function () {
     $('.sub-menu-shop').toggleClass('active');
 })
 
+$(document).on('click', function(e) {
+  if (!$(e.target).closest("#subMenu").length) {
+    $('.sub-menu-shop').removeClass('active');
+  }
+  e.stopPropagation();
+});
 
 
-
-
-
-
-
-
-// открывает поиск и запрещает скролл страницы
 
 $('.search').on('click', function () {
 	$('.search-section').addClass('active');
@@ -46,17 +38,6 @@ $('.close-search').on('click', function () {
 	$('.search-section').removeClass('active');
 	$('body').removeClass('scroll-hide');
 })
-
-
-
-
-
-
-
-
-
-//мобильное меню
-
 
 
 
@@ -78,33 +59,29 @@ $('#hideRight').on('click', function () {
 })
 
 
+	
+	
+	
+	
+	
+	
+	
+	
+ $(".tab_item").not(":first").hide();
+
+// $(".menu .tab").on('click', function() {
+// 	$(".menu .tab").removeClass("active").eq($(this).index()).addClass("active");
+// 	$(".tab_item").hide().eq($(this).index()).fadeIn()
+// }).eq(0).addClass("active");
 
 
+	$(".menu .tab").on('click', function () {
+		if (!$(this).hasClass('active')) {
+			$(this).addClass('active').siblings().removeClass('active');
+			$(".tab_item").hide().eq($(this).index()).fadeIn();
+		}
+	})
 
-
-
-
-
-// Переключает вкладки
-
-$(".tab_item").not(":first").hide();
-$(".menu .tab").click(function() {
-	$(".menu .tab").removeClass("active").eq($(this).index()).addClass("active");
-	$(".tab_item").hide().eq($(this).index()).fadeIn()
-}).eq(0).addClass("active");
-
-
-
-
-
-
-
-
-
-
-
-
-//  slick слайдеры
 
 $('.slider').slick({
 	dots: true,
@@ -119,87 +96,56 @@ $('.comments-slider-container').slick({
 	speed: 1000,
 	slidesToShow: 3,
 	infinite: false,
+	responsive: [
+    {
+      breakpoint: 1070,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 1,
+        infinite: false,
+        dots: true
+      }
+    },
+    {
+      breakpoint: 767,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1
+      }
+    },
+    {
+      breakpoint: 480,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1
+      }
+    }
+  ]
 });
 
 
+	$('.mobile-wrapper').on('click', function () {
+		const $thisNav = $(this).parents('.footer-links').find('ul');
+		$(this).toggleClass('active');
+		$(this).children('.footer-nav-img').toggleClass('active');
+		if ($(this).hasClass('active')) {
+			$thisNav.show('fast');
+		} else {
+			$thisNav.hide('fast');
+		}
+	})
 
 
 
 
 
 
+  AOS.init();
+
+	
 
 
-
-// сколл меню в footer
-
-
-$('#navFirst').on('click', function () {
-	$('#navFirst').toggleClass('active');
-
-	if ($('#navFirst').hasClass('active')) {
-		$('.mobile-list-first').show('fast');
-	} else {
-		$('.mobile-list-first').hide('fast');
-	}
-})
-
-
-
-
-
-// footer меню
-
-
-function windowSizeOne() {
-	if ($(window).width() < 767) {
-		$('.mobile-list-second').hide();
-	} else {
-		$('.mobile-list-second').show();
-	}
-}
-windowSizeOne()
-
-
-
-
-
-$('#navSecond').on('click', function () {
-	$('#navSecond').toggleClass('active');
-
-	if ($('#navSecond').hasClass('active')) {
-		$('.mobile-list-second').show('fast');
-	} else {
-		$('.mobile-list-second').hide('fast');
-	}
-
-})
-
-
-
-
-function windowSizeTwo() {
-	if ($(window).width() < 767) {
-		$('.mobile-list-third').hide();
-	} else {
-		$('.mobile-list-third').show();
-	}
-}
-windowSizeTwo()
-
-
-
-$('#navThird').on('click', function () {
-	$('#navThird').toggleClass('active');
-
-	if ($('#navThird').hasClass('active')) {
-		$('.mobile-list-third').show('fast');
-	} else {
-		$('.mobile-list-third').hide('fast');
-	}
-})
-
-
+	
 // FAQs секция
 
 //$('#fadeOutText').hide();
@@ -230,13 +176,6 @@ $('#navThird').on('click', function () {
 // })
 
 
-
-
-
-
-
-
-
 $('.content').on('click', function (){
 	$(this).toggleClass('show-this');
 	if($(this).hasClass('show-this')) {
@@ -249,24 +188,6 @@ $('.content').on('click', function (){
 		$('.title-color').removeClass('active');
 	}
 })
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // $('.content').on('click', function () {
 // 	if ($(this)) {
@@ -282,37 +203,6 @@ $('.content').on('click', function (){
 // 		$('.title-color').removeClass('active');
 // 	}
 // })
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 // $('.content').each(function () {
@@ -334,18 +224,6 @@ $('.content').on('click', function (){
 // })
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 // $('.content').on('click', function () {
 // 	if ($('.content').hasClass('show-this')) {
 // 		$('.open').addClass('active');
@@ -356,26 +234,4 @@ $('.content').on('click', function (){
 // 	}
 // }) 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// $('.content').click(function() {
-//   $(this).toggleClass('active').next()[$(this).next().is(':hidden') ? "slideDown" : "slideUp"](400);
-// });
+})
